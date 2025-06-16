@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;  
+} 
+
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* FOR OVERFLOW AND SCROLL I USED THIS TUTORIAL https://www.w3schools.com/cssref/pr_pos_overflow.php */   
+}
+
+/*Navigation Bar*/
+header {
+    display: flex; /*TO FURTHER UNDERSTAND THE FLEX WE ALSO USED https://www.w3schools.com/css/css3_flexbox.asp  ASWELL AS  https://www.youtube.com/watch?v=GteJWhCikCk */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    background-color: white;
+    position: fixed; /* WE MAINLY USED THIS FOR POSITIONS https://www.w3schools.com/css/css_positioning.asp*/
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* WE MAILY USED THIS TO UNDERSTAND THE Z-INDEX ASPECT https://www.geeksforgeeks.org/how-to-stack-elements-in-css/ */
+    margin: 0; /* FOR MARGINS I USED MOSTLY LECTURE SLIDES AND MORE COMPLICATED ONE I USED SOME FROM HERE  https://www.w3schools.com/css/css_margin.asp */
+}
+
+.logo {
+    width: 2rem;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem; 
+    align-items: center;
+
+}
+
+.nav_bottun {
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: color 0.3s; 
+}
+
+.nav_bottun:hover, .nav_bottun:focus{
+    color: rgb(244, 125, 41); 
+}
+
+/* 800px to rem is 800px/16 = 50rem */
+/* ALL @MEDIA ASPECTS WE USED THE LECTURE SLIDES AND  https://www.w3schools.com/css/css_rwd_mediaqueries.asp**/
+@media (min-width: 50rem) {
+    header {
+        padding: 0.75rem 0.75rem;
+        height: auto;
+    }
+
+    .logo {
+        width: 3rem;
+    }
+
+    nav {
+        gap: 1.5rem;
+    }
+
+    .nav_bottun {
+        font-size: 1rem;
+    }
+}
+
+/* 1300px to rem is 1300px/16 = 81rem */
+@media (min-width: 81rem) {
+    header {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .logo {
+        width: 3.5rem;
+    }
+
+    .nav_bottun {
+        font-size: 1rem;
+    }
+}
+
+#home {
+    background: rgb(136,178,159);
+    background: linear-gradient(180deg, rgba(136,178,159,1) 35%, rgba(248,238,225,1) 35%, rgba(248,238,225,1) 80%); /* FOR THE GRADIENT EFFECT WE USED https://cssgradient.io/ AS RECOMMENDED BY ANDREW*/
+    padding: 4.5rem 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+#Home {
+    background-color: rgb(19, 121, 95);
+    padding: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    
+}
+
+#home h1 {
+    font-family: "Montserrat", sans-serif;
+	font-weight: 800;
+    font-style: normal;
+    font-size: 1.65rem;
+    color: #FFFFFF;
+}
+
+#home p {
+    font-family:"Open Sans", sans-serif ;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+}
+
+#scrolling {
+    display: flex;
+    flex-direction: column;
+}
+
+#scrolling h2 {
+    font-family:"Open Sans", sans-serif ;
+    font-weight: 600;
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+#scrolling p {
+    color: rgb(244, 125, 41);
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    animation: scroll-right 5s linear infinite; /* FOR THE ANIMATION I USED A LOT OF DIFFRENT TOTURIALS SPECIALLY https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function AS WELL AS https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations*/
+}
+
+@keyframes scroll-right { /* FOR THE ANNIMATION AND TRANSFORM I ALSO USED https://www.w3schools.com/cssref/atrule_keyframes.php */
+    from {
+      transform: translateX(-2rem); 
+    }
+    to {
+      transform: translateX(2rem); 
+    }
+  }
+
+#scrolling nav {
+    align-items: flex-start;
+    display: flex;
+    gap: 0.5rem;
+    overflow: auto;
+    width: 100%;
+    padding: 0.8rem 0;
+    overflow-x: auto; 
+}
