@@ -1,0 +1,499 @@
+* {
+    box-sizing: border-box;  
+} 
+
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* FOR OVERFLOW AND SCROLL I USED THIS TUTORIAL https://www.w3schools.com/cssref/pr_pos_overflow.php */   
+}
+
+/*Navigation Bar*/
+header {
+    display: flex; /*TO FURTHER UNDERSTAND THE FLEX WE ALSO USED https://www.w3schools.com/css/css3_flexbox.asp  ASWELL AS  https://www.youtube.com/watch?v=GteJWhCikCk */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    background-color: white;
+    position: fixed; /* WE MAINLY USED THIS FOR POSITIONS https://www.w3schools.com/css/css_positioning.asp*/
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* WE MAILY USED THIS TO UNDERSTAND THE Z-INDEX ASPECT https://www.geeksforgeeks.org/how-to-stack-elements-in-css/ */
+    margin: 0; /* FOR MARGINS I USED MOSTLY LECTURE SLIDES AND MORE COMPLICATED ONE I USED SOME FROM HERE  https://www.w3schools.com/css/css_margin.asp */
+}
+
+.logo {
+    width: 2rem;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem; 
+    align-items: center;
+
+}
+
+.nav_bottun {
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: color 0.3s; 
+}
+
+.nav_bottun:hover, .nav_bottun:focus{
+    color: rgb(244, 125, 41); 
+}
+
+/* 800px to rem is 800px/16 = 50rem */
+/* ALL @MEDIA ASPECTS WE USED THE LECTURE SLIDES AND  https://www.w3schools.com/css/css_rwd_mediaqueries.asp**/
+@media (min-width: 50rem) {
+    header {
+        padding: 0.75rem 0.75rem;
+        height: auto;
+    }
+
+    .logo {
+        width: 3rem;
+    }
+
+    nav {
+        gap: 1.5rem;
+    }
+
+    .nav_bottun {
+        font-size: 1rem;
+    }
+}
+
+/* 1300px to rem is 1300px/16 = 81rem */
+@media (min-width: 81rem) {
+    header {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .logo {
+        width: 3.5rem;
+    }
+
+    .nav_bottun {
+        font-size: 1rem;
+    }
+}
+
+#home {
+    background: rgb(136,178,159);
+    background: linear-gradient(180deg, rgba(136,178,159,1) 35%, rgba(248,238,225,1) 35%, rgba(248,238,225,1) 80%); /* FOR THE GRADIENT EFFECT WE USED https://cssgradient.io/ AS RECOMMENDED BY ANDREW*/
+    padding: 4.5rem 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+#Home {
+    background-color: rgb(19, 121, 95);
+    padding: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    
+}
+
+#home h1 {
+    font-family: "Montserrat", sans-serif;
+	font-weight: 800;
+    font-style: normal;
+    font-size: 1.65rem;
+    color: #FFFFFF;
+}
+
+#home p {
+    font-family:"Open Sans", sans-serif ;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+}
+
+#scrolling {
+    display: flex;
+    flex-direction: column;
+}
+
+#scrolling h2 {
+    font-family:"Open Sans", sans-serif ;
+    font-weight: 600;
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+#scrolling p {
+    color: rgb(244, 125, 41);
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    animation: scroll-right 5s linear infinite; /* FOR THE ANIMATION I USED A LOT OF DIFFRENT TOTURIALS SPECIALLY https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function AS WELL AS https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations*/
+}
+
+@keyframes scroll-right { /* FOR THE ANNIMATION AND TRANSFORM I ALSO USED https://www.w3schools.com/cssref/atrule_keyframes.php */
+    from {
+      transform: translateX(-2rem); 
+    }
+    to {
+      transform: translateX(2rem); 
+    }
+  }
+
+#scrolling nav {
+    align-items: flex-start;
+    display: flex;
+    gap: 0.5rem;
+    overflow: auto;
+    width: 100%;
+    padding: 0.8rem 0;
+    overflow-x: auto; 
+}
+
+#scrolling nav a {
+    background-color: rgb(244, 125, 41); 
+    color: rgb(255, 255, 255);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 100rem;
+    font-family: "Open Sans", sans-serif; 
+    font-weight: 600;
+    font-size: 1rem;
+    flex-shrink: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#scrolling nav a:hover, 
+#scrolling nav a:focus-visible{
+    background-color: rgb(247,217,138);  /* I ALSO USED THIS TO LEARN ABOUT THE FOCUS https://w3schools.com/cssref/sel_focus.php*/
+    
+}
+
+/* 1000px to rem is 1000px/16 = 62rem */
+@media (min-width: 62rem) {
+    #home {
+        padding: 8rem 6rem;
+    }
+    
+    #Home {
+        padding: 4rem;
+        margin-bottom: 3.5rem;
+    }
+    
+    #home h1 {
+        font-size: 2.5rem;
+    }
+    
+    #home p {
+        font-size: 1.12rem;
+    }
+
+    #scrolling h2 {
+        font-size: 1.5rem;
+    }
+    
+    #scrolling p {
+        font-size: 1rem;
+    }
+
+    #scrolling {
+        margin-bottom: 2rem;
+    }
+    
+    #scrolling nav a {
+        padding: 1rem 1.5rem;
+        font-size: 1.5rem;
+    }
+}
+
+/* 1450px to rem is 1450px/16 = 90rem */
+@media (min-width: 95rem) {
+    #home {
+        padding: 12rem 6rem;
+        margin-bottom: 10rem;
+    }
+    
+    #Home {
+        padding: 5rem;
+    }
+    
+    #home h1 {
+        font-size: 3.5rem;
+    }
+    
+    #home p {
+        font-size: 1.8rem;
+    }
+
+    #scrolling h2 {
+        font-size: 2rem;
+    }
+    
+    #scrolling p {
+        font-size: 1.5rem;
+    }
+    
+    #scrolling nav a {
+        padding: 1.5rem 2rem;
+        font-size: 2rem;
+    }
+}
+
+/* Grant box styles */
+
+.box1 {
+    background-color: rgb(19, 121, 95) ;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; 
+    margin: 2rem 2rem 0rem 2rem;
+    padding: 2rem;
+}
+
+.amt {
+    font-family:"Montserrat", sans-serif;
+	font-weight: 700;
+    font-size: 2.5rem;
+    color: rgb(247,217,138);
+    margin-bottom: 0rem;
+    order: -1;
+    text-align: center;
+}
+.box1 h2 {
+    font-family: "Open Sans", sans-serif;
+	font-weight: 600;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 0rem;
+}
+
+.type {
+    font-style: italic; /* I USED THIS FOR FAST CODE OF ITALIC https://www.geeksforgeeks.org/how-to-combine-bold-and-italic-in-css/ */
+    font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+    font-size: 0.8rem;
+    margin-top: 0rem;
+    color: white;
+
+}
+
+.box3 {
+    list-style: none;
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    gap: 2rem; 
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    font-size: 1rem ;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color:rgb(244,125,41);
+    font-family: "Montserrat", sans-serif;
+	font-weight: 800;
+}
+
+.box2{
+    background-color: #bde0e7;
+    padding: 1.5rem;
+}
+
+.box2 .loco {
+    font-family:"Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: rgb(19, 121, 95);
+}
+.box2 h3{
+    font-family:"Open Sans", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: black;
+}
+
+.box2 p{
+    font-family:"Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: black;
+}
+
+
+.dead h3{
+    display: inline-block;
+}
+
+.dead p{
+    display: inline-block;
+}
+
+.req {
+    margin-top: 2.5rem;
+}
+
+.peq{
+    margin-bottom: 2.5rem;
+}
+
+
+/* Learn More Button */
+/* FOR MOST BUTTONS I JUST FOLLOWED THE LECTURE SLIDES BUT WHEN WE NEEDED HELP WE USED https://www.w3schools.com/css/css3_buttons.asp */
+.lm {
+    display: inline-block;
+    background-color:rgb(244,125,41);
+    font-family:"Open Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFFFFF; 
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 100rem;
+    margin-bottom: 2rem;
+}
+
+.lm:hover,
+.lm:focus {
+    background-color: rgb(247,217,138);
+}
+
+/* 1000px to rem is 1000px/16 = 62rem */
+/* FOR ALL GRIDS WE MAINLY USED https://css-tricks.com/snippets/css/complete-guide-grid/#:~:text=CSS%20Grid%20basics&text=To%20get%20started%20you%20have,%2Dcolumn%20and%20grid%2Drow%20.*/
+@media (min-width: 62rem) {
+    .fund {
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 38%, rgba(189,224,231,1) 38%, rgba(188,223,231,1) 100%);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: white;
+        margin-bottom: 0.05rem;
+    }
+
+    .box0 {
+        grid-column: 1;
+    }
+
+    .box1 {
+        margin: 3rem 3rem 0rem 3rem;
+    }
+    
+    .amt {
+        font-size: 3rem;
+    }
+    .box1 h2 {
+        font-size: 2rem;
+    }
+    
+    .type{
+        font-size: 1rem;
+    }
+    
+    .box3 {
+        font-size: 1.3rem ;
+    }
+    
+    .box2{
+        background-color: #bde0e700;
+        padding: 2rem;
+        grid-column: 2;
+    }
+    
+    .box2 .loco {
+        font-size: 1.8rem;
+    }
+    .box2 h3{
+        font-size: 1.3rem;
+    }
+    
+    .box2 p{
+        font-size: 1rem;
+    }
+    
+    
+    /* Learn More Button */
+    .lm {
+        font-size: 1rem;
+        padding: 1rem 2.5rem;
+    }
+
+}
+
+/* 1450px to rem is 1450px/16 = 90rem */
+@media (min-width: 90rem) {
+    .fund {
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 38%, rgba(189,224,231,1) 38%, rgba(188,223,231,1) 100%);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: white;
+        margin-bottom: 0.1rem;
+    }
+
+    .box0 {
+        grid-column: 1;
+    }
+
+    .box1 {
+        margin: 4rem 4rem 0rem 4rem;
+        padding: 2rem;
+    }
+    
+    .amt{
+        font-size: 5rem;
+    }
+    .box1 h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .type {
+        font-size: 1.5rem;
+    }
+    
+    .box3 {
+        font-size: 2rem ;
+    }
+    
+    .box2{
+        background-color: #bde0e700;
+        padding: 2rem;
+        grid-column: 2;
+    }
+    
+    .box2 .loco {
+        font-size: 2rem;
+    }
+    .box2 h3{
+        font-size: 1.5rem;
+        
+    }
+
+    
+    .box2 p{
+        font-size: 1.14rem;
+    }
+    .lm {
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+    }
+
+    .req {
+        margin-top: 3rem;
+    }
+    
+    .peq{
+        margin-bottom: 3rem;
+    }
+}
+
+/* Overall for all the project we used a combination of lecture slides, andrew's toturial, and many other videos and websites thet we cited prevoiusly*/
